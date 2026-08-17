@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 65% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 0 75% 55%;
+    --primary-metallic: 0 45% 35%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 200 100% 50%;
+    --accent-foreground: 0 0% 5%;
+    --accent-glow: 200 100% 60%;
+
+    --success: 120 100% 40%;
+    --success-glow: 120 100% 50%;
+
+    --warning: 30 100% 50%;
+
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 20%;
+    --ring: 0 65% 45%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-dark: linear-gradient(180deg, hsl(var(--background)), hsl(var(--card)));
+    --gradient-metallic: linear-gradient(
+      145deg,
+      hsl(var(--primary-metallic)),
+      hsl(var(--primary)),
+      hsl(var(--primary-glow))
+    );
+    --gradient-radial: radial-gradient(circle, var(--tw-gradient-stops));
+
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-cyber: 0 0 20px hsl(var(--accent) / 0.4);
+    --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.5);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.4s ease-in-out;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+}
+
+@layer components {
+  .metallic-text {
+    @apply bg-gradient-to-r from-primary-metallic via-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
+  .glow-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent
+      drop-shadow-[0_0_10px_hsl(var(--primary)/0.8)];
+  }
+
+  .cyber-button {
+    @apply relative rounded-lg bg-gradient-to-r from-primary to-primary-glow px-6 py-3
+      font-semibold uppercase tracking-wide text-primary-foreground transition-all duration-300
+      hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] active:scale-95;
+  }
+
+  .cyber-border {
+    @apply rounded-lg border border-primary/30 bg-card/50 backdrop-blur-sm transition-all
+      duration-300 hover:border-primary/60;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:scale-105
+      hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)];
+  }
+
+  .countdown-box {
+    @apply rounded-lg border border-primary/30 bg-card/50 backdrop-blur-sm transition-all
+      duration-300 hover:scale-105 hover:border-primary/60
+      hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)];
+  }
+}
