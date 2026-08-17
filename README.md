@@ -1,14 +1,14 @@
-# Sawah Cyber Security CTF 2025 — Landing Page (React rebuild) 🚩
+# Sawah Cyber Security CTF 2025 — Landing Page (React rebuild)
 
-A rebuild of the Sawah Cyber Security CTF 2025 landing page, this time on a proper component-based stack instead of one long HTML file.
+A rebuild of the Sawah Cyber Security CTF 2025 landing page on a component-based stack, replacing the original single-file version.
 
-## Why a second version? 🤔
+![The rebuilt landing page](public/LandingPage.png)
 
-The [original page](https://github.com/GianneAngely/ctf-landing-page) was a single `index.html` with all the markup, styles, and scripts in one place. It worked, but editing one section meant scrolling through thousands of lines. This version splits everything into components so each section can be changed on its own.
+## Why a second version
 
-## What is inside 🧩
+The [original page](https://github.com/GianneAngely/ctf-landing-page) was a single `index.html` holding all the markup, styles, and scripts. It worked, but editing one section meant scrolling through thousands of lines. This version splits the page into components so each section can be changed independently, and adds a dark theme with an animated matrix background.
 
-Each part of the page is its own component:
+## Components
 
 - `HeroSection` with the event pitch
 - `CountdownTimer` counting down to the competition
@@ -18,7 +18,7 @@ Each part of the page is its own component:
 - `Navigation` and `Footer`
 - `MatrixBackground` for the falling-code effect behind the hero
 
-## Built with 🛠️
+## Built with
 
 - **Vite** for the dev server and build
 - **React** with **TypeScript**
@@ -26,9 +26,11 @@ Each part of the page is its own component:
 - **shadcn/ui** for the base components
 - **AOS** for scroll-triggered animations
 
-## Running it locally 💻
+## Requirements
 
-Requires Node.js 18 or newer.
+Node.js 18 or newer.
+
+## Running it locally
 
 ```bash
 npm install
@@ -45,9 +47,9 @@ npm run build
 
 The output lands in `dist/`.
 
-## Docker 🐳
+## Docker
 
-The repo ships a `Dockerfile` and an `nginx.conf`, so it can also be built into a container that serves the static bundle through nginx:
+The repository includes a `Dockerfile` and an `nginx.conf`, so the static bundle can also be served from a container:
 
 ```bash
 docker build -t scs-ctf-landing .
